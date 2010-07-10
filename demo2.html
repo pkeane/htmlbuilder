@@ -1,0 +1,263 @@
+<html><head>
+        <style type="text/css">
+            th {
+                font-weight: bold;
+                color: #009;
+                text-align: right;
+            }
+            td {
+                padding: 0 6px;
+            }
+        </style>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="htmlbuilder.js"></script>
+<script src="jquery.tmpl.js"></script>
+<script>
+
+var profile = {
+  "id": "vrc",
+  "name": "Art & Art History Visual Resources Collection",
+  "item_types": {
+    "none": "default/none"
+  },
+  "attributes": {
+    "acc_alttitle": "Alternate Title",
+    "acc_box": "Box",
+    "acc_cat1": "Call Number 1",
+    "acc_cat2": "Call Number 2",
+    "acc_cat3": "Call Number 3",
+    "acc_cty_name_fk": "Country",
+    "acc_cycle": "Cycle",
+    "acc_d": "Administrative Date",
+    "acc_digital_num": "Digital File",
+    "acc_dig_size": "Digital Size",
+    "acc_dig_type": "Digital File Type",
+    "acc_dimension": "Dimensions",
+    "accession_number": "Accession Number",
+    "acc_item": "Item/page/plate",
+    "acc_keyword": "Subject Keyword",
+    "acc_location": "Creation Location",
+    "acc_mainentry": "Main Entry",
+    "acc_mainentry_d": "Date",
+    "acc_modified": "Last Modified",
+    "acc_num_pk": "Acc Num Pk",
+    "acc_num_PK": "Original Accession Number",
+    "acc_other_mus": "Location",
+    "acc_ref": "Reference",
+    "acc_role_name_fk": "Creator Role",
+    "acc_slide_status": "Slide Status",
+    "acc_source": "Source (old records)",
+    "acc_title1": "Title",
+    "acc_title2": "Additional Notes",
+    "acc_unknown_medium": "Unknown Medium",
+    "acc_unknown_museum": "Unknown Museum",
+    "administrative_notes": "Administrative Notes",
+    "agent": "Agent",
+    "analog_accession_number": "Analog Accession Number",
+    "box_name": "Box Name",
+    "cat_1": "Cat 1",
+    "cat_2": "Cat 2",
+    "cat_3": "Cat 3",
+    "copyright_note": "Copyright Note",
+    "creation_date": "Creation Date",
+    "c_slide": "Other Creator",
+    "dase_rights": "Dase Rights Level",
+    "date": "Date",
+    "depicted_subject": "Depicted Subject",
+    "description": "Description",
+    "description_source": "Description Source",
+    "dimensions": "Dimensions",
+    "file_format": "File Format",
+    "filename": "Filename",
+    "f_name": "Format",
+    "image": "Image",
+    "image_title": "Image Title",
+    "image_type": "Image Type",
+    "image_view_date": "Image View Date",
+    "item_num": "Item Num",
+    "item_number": "Item Number",
+    "location": "Location",
+    "mainentry": "Mainentry",
+    "mat_desc": "Material/technique",
+    "material": "Material",
+    "med_name": "Medium",
+    "modification_date": "Modification Date",
+    "mus_city": "Location City",
+    "mus_name": "Museum Name",
+    "other_title": "Other Title",
+    "record_id": "Record Id",
+    "related_subject": "Related Subject",
+    "related_works": "Related Works",
+    "req_desc": "Source",
+    "review_date": "Review Date",
+    "reviewer": "Reviewer",
+    "scan_date": "Scan Date",
+    "scanner": "Scanner",
+    "scan_review_date": "Scan Review Date",
+    "scan_reviewed_by": "Scan Reviewed By",
+    "source": "Source",
+    "styleperiodculture": "Style/Period/Culture",
+    "textref": "Textref",
+    "title": "Title",
+    "updated": "Updated",
+    "vrc_staff": "Vrc Staff",
+    "work_id": "Work Id",
+    "work_relationship": "Work Relationship",
+    "work_type": "Work Type"
+  }
+};
+
+var item = {
+  "app_root": "https://dase.laits.utexas.edu",
+  "_id": "vrc/06-02075",
+  "_created": "2005-01-01T00:00:00-06:00",
+  "_updated": "2009-12-18T18:56:15-06:00",
+  "_item_id": 380115,
+  "_serial_number": "06-02075",
+  "c": "vrc",
+  "collection": "Art & Art History Visual Resources Collection",
+  "item_type": "default",
+  "item_type_name": "default",
+  "media": {
+    "thumbnail": "/media/vrc/thumbnail/06-02075_100.jpg",
+    "viewitem": "/media/vrc/viewitem/06-02075_400.jpg",
+    "small": "/media/vrc/small/06-02075_640.jpg",
+    "medium": "/media/vrc/medium/06-02075_800.jpg",
+    "large": "/media/vrc/large/06-02075_1024.jpg",
+    "full": "/media/vrc/full/06-02075_3600.jpg",
+    "enclosure": "/media/vrc/full/06-02075_3600.jpg"
+  },
+  "links": {
+    "comments": "/item/vrc/06-02075/comments",
+    "content": "/item/vrc/06-02075/content",
+    "edit": "/media/vrc/06-02075.json",
+    "edit-media": "/media/vrc/06-02075",
+    "item_type": "/item/vrc/06-02075/item_type",
+    "media": "/item/vrc/06-02075/media",
+    "metadata": "/item/vrc/06-02075/metadata",
+    "status": "/item/vrc/06-02075/status"
+  },
+  "alternate": {
+    "html": "/item/vrc/06-02075.html",
+    "atom": "/item/vrc/06-02075.atom",
+    "json": "/item/vrc/06-02075.json"
+  },
+  "metadata": {
+    "title": [
+      "Scotts Run, West Virginia"
+    ],
+    "agent": [
+      "Shahn, Ben"
+    ],
+    "date": [
+      "1937"
+    ],
+    "work_type": [
+      "Paintings"
+    ],
+    "material": [
+      "tempera on cardboard"
+    ],
+    "dimensions": [
+      "22-1/4 x 27-7/8\""
+    ],
+    "location": [
+      "Whitney Museum of American Art (New York City)"
+    ],
+    "styleperiodculture": [
+      "American"
+    ],
+    "source": [
+      "Pohl, Frances K. (Frances Kathryn), Ben Shahn, 1993"
+    ],
+    "image_type": [
+      "digital"
+    ],
+    "accession_number": [
+      "06-02075"
+    ],
+    "item_number": [
+      "p.57, bottom"
+    ],
+    "work_relationship": [
+      "image of"
+    ],
+    "administrative_notes": [
+      "[11/29/2006 updated to digi. flat scan. req.#2006-07-Vr32]"
+    ],
+    "scanner": [
+      "VRCmd"
+    ],
+    "scan_date": [
+      "11/06"
+    ],
+    "scan_reviewed_by": [
+      "Mark Doroba"
+    ],
+    "filename": [
+      "06-02075.tif"
+    ],
+    "file_format": [
+      "tif"
+    ],
+    "creation_date": [
+      "Nov 13 2006 12:52PM"
+    ],
+    "modification_date": [
+      "Nov 29 2006 10:38AM"
+    ],
+    "reviewer": [
+      "migration",
+      "migration"
+    ],
+    "box_name": [
+      "DIGI-vr"
+    ],
+    "item_num": [
+      "16499"
+    ],
+    "mainentry": [
+      "SHAHN, BEN"
+    ],
+    "vrc_staff": [
+      "Katja Rivera"
+    ],
+    "work_id": [
+      "91337134f779d9b26ba2687d9360fa5b"
+    ],
+    "image": [
+      "(06-02075)"
+    ],
+    "cat_1": [
+      "382"
+    ],
+    "cat_2": [
+      "S525"
+    ]
+  }
+};
+
+jQuery(function(){
+    var h = new HTMLBuilder;
+    var h1 = h.add('h1');
+    h1.add('a',{'href':item.app_root+item.alternate.html},'Item '+item._serial_number);
+    var img = h.add('img',{'src':item.app_root+item.media.thumbnail});
+    var table = h.add('table');
+    for (n in item.metadata) {
+        var tr = table.add('tr');
+        tr.add('th',null,profile.attributes[n]);
+        td_text = [];
+        for (i in item.metadata[n]) {
+            td_text[td_text.length] = item.metadata[n][i];
+        }
+        tr.add('td',null,td_text.join(', '));
+    }
+    h.attach(jQuery('#data').get(0));
+});
+</script>
+</head>
+<body>
+
+<div id="data"></div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>js templating</title>
+        <style type="text/css">
+            table {
+                border-collapse: collapse;
+            }
+            tr.highlight {
+                background-color: #ffc;
+            }
+            td {
+                border: 1px solid #ddd;
+                padding: 2px;
+            }
+        </style>
+
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="2010.json.js"></script>
+        <script src="htmlbuilder.js"></script>
+        <script>
+            var ballots = data.BALLOTS;
+            jQuery(function(){
+                var longest = 0;
+                for (var i=0;i<ballots.length;i++) {
+                    var row = ballots[i];
+                    if (row.length > longest) {
+                        longest = row.length;
+                    }
+                }
+                table = new HTMLBuilder('table',{'class':'demo'});
+                for (var i=0;i<ballots.length;i++) {
+                    var row = ballots[i];
+                    tr = table.add('tr');
+                    if (i%2) {
+                        tr.set('class','highlight');
+                    }
+                    //for (var j=0;j<row.length;j++) {
+                    for (var j=0;j<longest;j++) {
+                        var cell = row[j];
+                        td = tr.add('td',null,cell);
+                    }
+                }
+                table.attach(jQuery('#htmlDisplay').get(0));
+            });
+        </script>
+
+    </head>
+    <body>
+        <div id="htmlDisplay"></div>
+    </body>
+</html>
