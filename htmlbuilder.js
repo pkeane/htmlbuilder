@@ -1,3 +1,9 @@
+/*
+copyright 2009 Peter Keane
+Licensed under the terms of the MIT License
+http://www.opensource.org/licenses/mit-license.php
+*/
+
 /******* example
  var h = new HTMLBuilder;
  h.add('h1',null,'Item Status ('+status+')');
