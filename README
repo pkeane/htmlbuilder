@@ -1,2 +1,18 @@
 this is an html generator designed to work well w/ JSON data
 
+Example:
+
+ var h = new HTMLBuilder;
+ h.add('h1',null,'Item Status ('+status+')');
+ var form = h.add('form',{'id':'itemStatusForm'});
+ var sel = form.add('select',{'name':'status'});
+ sel.add('option',null,'select status:');
+ sel.add('option',{'value':'public'},'public');
+ sel.add('option',{'value':'draft'},'draft');
+ sel.add('option',{'value':'delete'},'delete');
+ sel.add('option',{'value':'archive'},'archive');
+ form.add('input',{'type':'submit','value':'update status'});
+ form.add('span',null,' ');
+ form.add('span',{'id':'updateMsg'});
+ h.attach(document.getElementById('status_form'));
+
