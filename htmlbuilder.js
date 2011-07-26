@@ -82,3 +82,8 @@ HTMLBuilder.prototype.add = function(tagName,keyvals,text) {
 	this.elements.push(h);
 	return h;
 };
+
+HTMLBuilder.prototype.$ = function(id) {
+	return document.getElementById(id);
+};
+
